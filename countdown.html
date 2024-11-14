@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <meta charset='UTF-8'>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>    
+
+
+<!--Mobile View-->   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<!--Tab Image Icon-->     
+    <link rel="icon" href="images/">
+
+<!-- jQuery -->
+<script src='jquery-3.1.1.min.js' type='text/javascript'></script>
+<script src='jquery-ui.min.js' type='text/javascript'></script>
+<link href='jquery-ui.min.css' rel='stylesheet' type='text/css'>   
+
+   <!--Bootstrap-->
+<script src="popper.min.js"></script>
+ <link href='font-awesome.min.css' rel='stylesheet' type='text/css'>  
+<link rel="stylesheet" href="bootstrap.min.css"> 
+<script src="bootstrap.min.js"></script>
+ 
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: url(images/ahtziri-lagarde-fwWNzqif624-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        overflow: hidden;
+        color: white;
+        z-index: 11;
+        
+    }
+
+    h1 {
+        font-weight: normal;
+        font-size: 60px;
+        margin: -150px 0 40px;
+    }
+
+    .countdown {
+        display: flex;
+        transform: scale(2);
+    }
+
+    .time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 15px;
+    }
+
+    .time h2{
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 1;
+        margin: 0 0 5px;
+    }
+
+    @media (max-width: 500px) {
+
+    }
+    h1 {
+        font-size: 45px;
+
+    }
+
+    .time {
+        margin: 5px;
+    }
+
+    .time h2 {
+        font-size: 12px;
+    }
+
+    .time small {
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <h1>New Year Countdown</h1>
+
+  <div id="countdown" class="countdown">
+      <div class="time">
+          <h2 id="days"></h2>
+          <small>Days</small>
+      </div>
+
+      <div class="time">
+          <h2 id="hours"></h2>
+          <small>Hours</small>
+      </div>
+      
+      <div class="time">
+          <h2 id="minutes"></h2>
+          <small>Minutes</small>
+      </div>
+
+      <div class="time">
+          <h2 id="seconds"></h2>
+          <small>Seconds</small>
+      </div>
+
+  </div>
+  
+  <script>
+
+      const days = document.getElementById('days');
+      const hours = document.getElementById('hours');
+      const minutes = document.getElementById('minutes');
+      const seconds = document.getElementById('seconds');
+
+      const currentYear = new Date().getFullYear();
+
+      const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
+
+      //update  countdown time
+
+      function updateCountdown() {
+          const currentTime = new Date();
+          const diff = newYearTime - currentTime;
+
+          const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+          const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+          const m = Math.floor(diff / 1000 / 60) % 60;
+          const s = Math.floor(diff / 1000) % 60;
+
+          days.innerHTML = d;
+          hours.innerHTML = h < 10 ? '0' + h : h;
+          minutes.innerHTML = m < 10 ? '0' + m : m;
+          seconds.innerHTML = s < 10 ? '0' + s : s;
+
+      }
+      setInterval(updateCountdown, 1000);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+
+    <style>
+        #menu{
+            padding: 25px 0 25px 0;
+        }
+        #section{
+            padding: 25px 0 25px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            font-style: oblique;
+        }
+
+        #menu_row{
+            display: flex;
+            padding: 0 100px 0 100px;
+        }
+        #menu_col{
+            box-shadow: 2px 2px 2px #bbb;
+            border: 1px solid #bbb;
+            background-color: #fff;
+            margin: 10px;
+            padding: 10px;
+            flex: 1;
+        }
+        #menu_col h2 {
+            background-color: purple;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            font-family: cursive;
+        }
+        #image{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid purple;
+        }
+        #image img{
+            width: 100%;
+            height: 100%;
+            border-radius: 500%;
+            object-fit: cover;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 5px;
+
+        }
+
+        @media screen and (max-width: 768px){
+            #mobile_menu{
+                display: block;
+            }
+            #navbar ul{
+                display: none;
+            }
+            html{
+                font-size: 95%;
+            }
+            #menu_row{
+                flex-wrap: wrap;
+                padding: 0 10px 0 10px;
+            }
+        }
+        @media screen and (max-width: 360px){
+            html{
+                font-size: 70%;
+            }
+        }
+            
+        
+
+    </style>
+    
+    <!--Mobile View-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Tab Image Icon-->
+    <link rel="icon" href="images/">
+
+    <!-- jQuery -->
+    <script src='jquery-3.1.1.min.js' type='text/javascript'></script>
+    <script src='jquery-ui.min.js' type='text/javascript'></script>
+    <link href='jquery-ui.min.css' rel='stylesheet' type='text/css'>
+    <script src="popper.min.js">
+
+    </script>
+
+
+
+    <link href='font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap1.min.css">
+    <!--Bootstrap-->
+    <script src="bootstrap.min.js"></script>
+    
+</head>
+
+
+
+<body style="background:url(images/imgs/gallary-1.jpg);background-size:cover;background-position:center center;" >
+    <div id="menu">
+        <h5 id="section" class="text-light" > Breakfast Menu</h5>
+        <div id="menu_row" >
+            <div id="menu_col"style="background-color:#1E1A20">
+                <h2>Starter</h2>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/imgs/blog-2.jpg" alt="">
+
+                    </div>
+                    <div>
+                        <h3 class="text-light">Strawberry</h3>
+                        <h4 class="text-light">10$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/imgs/gallary-10.jpg" alt="">
+    
+                    </div>
+                    <div>
+                        <h3 class="text-light">Pawpaw</h3>
+                        <h4 class="text-light">5$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/imgs/gallary-2.jpg" alt="">
+    
+                    </div>
+                    <div>
+                        <h3 class="text-light">Oats</h3>
+                        <h4 class="text-light">20$</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="menu_col" style="background-color:#1E1A20">
+                <h2>Main Course</h2>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/choco.jpg" alt="">
+
+                    </div>
+                    <div>
+                        <h3 class="text-light">Chocolate Pancake</h3>
+                        <h4 class="text-light">5$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/food.jpg" alt="">
+    
+                    </div>
+                    <div>
+                        <h3 class="text-light">Vanilla Pancake</h3>
+                        <h4 class="text-light">10$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/cake.jpg" alt="">
+    
+                    </div>
+                    <div>
+                        <h3 class="text-light">Pancake with Honey</h3>
+                        <h4 class="text-light">20$</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="menu_col" style="background-color:#1E1A20">
+                <h2>Dessert</h2>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/imgs/blog-4.jpg" alt="">
+
+                    </div>
+                    <div>
+                        <h3 class="text-light">Iced Lemon Water</h3>
+                        <h4 class="text-light">5$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/imgs/blog-5.jpg" alt="">
+    
+                    </div>
+                    <div>
+                        <h3 class="text-light">Smoothie</h3>
+                        <h4 class="text-light">10$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img src="images/imgs/blog-6.jpg" alt="">
+    
+                    </div>
+                    <div>
+                <h3 class="text-light">Orange Juice</h3>
+                        <h4 class="text-light">20$</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+    
+</body>
+</html>

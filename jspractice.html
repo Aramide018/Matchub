@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Javascript</title>
+   <!--Mobile View-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!--Tab Image Icon-->
+   <link rel="icon" href="images/">
+
+   <!-- jQuery -->
+   <script src='jquery-3.1.1.min.js' type='text/javascript'></script>
+   <script src='jquery-ui.min.js' type='text/javascript'></script>
+   <link href='jquery-ui.min.css' rel='stylesheet' type='text/css'>
+   <script src="popper.min.js"> </script>
+
+   <link href='font-awesome.min.css' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="bootstrap.min.css">
+   <link rel="stylesheet" href="bootstrap1.min.css">
+   <!--Bootstrap-->
+   <script src="bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #D9DDDC;" class="container">
+   <br><br>
+
+   <!-- first input -->
+   <input type="text" id="get_value" value="25" class="form-control">
+   <br><br>
+
+   <!-- second input  -->
+   <input type="text" id="load_value" class="form-control">
+
+   <br>
+   <button class=" btn btn-success" onclick="alert('This is an event pop up when clicked')">Click Event</button>
+
+   <br>
+   <input type="text" onkeyup="alert('You have released a key inside text input')">
+   <textarea onkeyup="alert('You have released a key inside textarea!')"></textarea>
+
+   <br><br><br>
+   <h5>Javascript Document Object Model</h5>
+   <div id="balance">5000</div>
+   <input type="text" class="form-control" id="get_withdrawal">
+   <button class="btn btn-primary" onclick="atm()">Withdraw</button>
+   <br>
+   <!-- <input type="text" id="show_bal"> -->
+
+   <br><br><br>
+
+   <h5>Javascript Simple Calculator</h5>
+   <input type="number" id="num1" style="font-weight: bold; font-size: 25px;" class="form-control">
+   <br><br>
+   <select id="operator" style="font-weight: bold; font-size: 25px;" class="form-control">
+      <option value="Select operators" hidden selected disabled>Select Operators</option>
+      <option style="font-weight: bold; font-size: 25px;" value="+">+</option>
+      <option style="font-weight: bold; font-size: 25px;" value="-">-</option>
+      <option style="font-weight: bold; font-size: 25px;" value="*">*</option>
+      <option style="font-weight: bold; font-size: 25px;" value="/">/</option>
+      <option style="font-weight: bold; font-size: 25px;" value="**">**</option>
+      <option style="font-weight: bold; font-size: 25px;" value="%">%</option>
+
+   </select>
+   <br><br>
+   <input type="number" id="num2" style="font-weight: bold; font-size: 25px;" class="form-control">
+   <br><br>
+   <button onclick="calculator()" class="btn btn-success">CALCULATE</button>
+   <div id="answer" style="font-weight: bolder; font-size: 20px;"></div>
+   <br><br>
+
+   <h4>TEST NDA AGE</h4>
+   <input type="text" placeholder="enter your age" id="age" required maxlength="2">
+   &nbsp;
+   <button class="btn btn-dark" onclick="eligible()">Eligibility</button>
+
+   <br><br><br><br>
+
+   <h4>Interest Percentage</h4>
+   <input type="number" id="principal" placeholder="Enter Principal loan">
+   <br><br>
+   <input type="number" id="percent" placeholder="Enter Percentage rate">
+   <br><br>
+   <input type="text" id="Interest" placeholder="Interest">
+   <br><br>
+
+
+   <script>
+      $(document).ready(function () {
+         $('#percent').keyup(function () {
+            var principal = parseInt(document.getElementById('principal').value);
+            var percent = parseInt(d.getElementById('percent').value);
+            var interest = (percent / 100) * principal;
+            if (isNaN(interest)) {
+               document.getElementById('interest').value = 0
+            } else {
+               document.getElementById('interest').value = interest;
+            };
+         });
+      });
+
+      function eligible() {
+         var age = document.getElementById('age').value;
+         if (age >= 18 && age <= 28) {
+            alert("You are free to apply for NDA");
+         } else {
+            if (age < 18) {
+               alert("You are not eligible to apply");
+            } else {
+               alert("You are too old to apply for NDA");
+            }
+
+         }
+      }
+
+      document.write("<br>");
+      document.write("<h4>Javascript Inbuilt Function</h4>");
+
+      var round_me = Math.round(2.6680);
+      document.write(round_me);
+      document.write("<br>"); document.write("<br>");
+
+      var square_root = Math.sqrt(100);
+      document.write(square_root);
+      document.write("<br>");
+      document.write("<br>");
+
+      var raise_to_power = Math.pow(2, 3);
+      document.write(raise_to_power);
+      document.write("<br>");
+      document.write("<br>");
+
+      var round_up = Math.ceil(4.2);
+      document.write(round_up);
+      document.write("<br>");
+      document.write("<br>");
+
+      var round_down = Math.floor(4.8);
+      document.write(round_down);
+      document.write("<br>");
+      document.write("<br>");
+
+      var random_number = Math.floor(Math.random() * 9999999999) + 1000000000;
+      document.write(random_number);
+      document.write("<br>");
+      document.write("<br>");
+
+
+
+
+      function calculator() {
+         var num1 = document.getElementById('num1').value;
+         var operator = document.getElementById('operator').value;
+         var num2 = document.getElementById('num2').value;
+
+         // user restriction code
+         if (isNaN(num1) || isNaN(num2) || operator === "Select Operator") {
+            alert('Please enter valid numbers and select an operator');
+            return false;
+         } else {
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            if (operator === "+") {
+               var answer = num1 + num2;
+            }
+            if (operator === "-") {
+               var answer = num1 - num2;
+            }
+            if (operator === "*") {
+               var answer = num1 * num2;
+            }
+            if (operator === "/") {
+               var answer = num1 / num2;
+            }
+            if (operator === "**") {
+               var answer = num1 ** num2;
+            }
+            if (operator === "%") {
+               var answer = num1 % num2;
+            }
+
+
+            document.getElementById('answer').innerHTML = answer
+         }
+
+      }
+
+
+      // ATM 
+      function atm() {
+         var acc_balance = document.getElementById('balance').innerHTML
+         var withdraw = document.getElementById('get_withdrawal').value
+
+         if (withdraw > acc_balance) {
+            alert('Insufficient Funds!');
+         } else {
+            var new_balance = acc_balance - withdraw;
+            alert('You have successfully withdrawn $' + withdraw + '. Your current balance is: $' + new_balance);
+            //   document.getElementById('show_bal').value = new_balance;
+
+         }
+
+      }
+
+      var my_name = "James";
+      document.write(my_name);
+      document.write("<br>");
+      document.write("<h1>Peter</h1>");
+      document.write("<br>");
+      var amount = 50;
+      //alert(amount);
+      document.write("<br>");
+      var get_number = document.getElementById('get_value').value;
+      //alert(get_number);
+      document.write("<br>");
+
+      // JS Operators
+      var x = 5;
+      var y = 3;
+      var a = x + y;
+      var b = x - y;
+      var c = x / y;
+      var d = x * y;
+
+      document.write(a + "<br>" + b + ", " + c + ", " + d);
+      document.write("<br>");
+      document.getElementById('load_value').value = b;
+
+      document.write("<br>");
+      var myVar = "Hello, my name is Roqeebat";
+      console.log(myVar);
+
+      // Javascript Array
+      var colors = ["Red", "Yellow", "Green", "Orange"];
+      var cities = ["New York", "Dubai", "Seoul"];
+
+      //alert(colors[1]); //Output Yellow
+      //alert(cities[2]); // Output dubai
+
+      //Javascript Function
+
+      function speak() {
+         return "i'm fine";
+      }
+
+      var answer = speak();
+      //alert(answer);
+      //console.log(answer);
+
+      // *IF STATEMENT*
+      var j = 5;
+      if (j === 2) {
+         // alert('j is indeed equal to 2');
+      } else {
+         // alert('j is not equal to 2. Although j = ' + j);
+      }
+
+      // IF STATEMENT USING AND
+      var check_book = "book";
+      var check_pen = "pen";
+
+      if (check_book === "book" && check_pen === "pen") {
+         // alert("You are free to enter (1)");
+      } else {
+         //alert("You are not allowed to enter (1)");
+      }
+
+      // IF STATEMENT USING OR
+      if (check_book === "book" || check_pen === "pen") {
+         //alert("You are free to enter (2)");
+      } else {
+         // alert("You are not allowed to enter (2)");
+      }
+
+
+      var acc_balance = 5000;
+      var withdraw = 4000;
+
+      if (withdraw > acc_balance) {
+         // alert('Insufficient Funds!');
+      } else {
+         var new_balance = acc_balance - withdraw;
+         //  alert('You have successfully withdrawn N' + withdraw + '. Your current balance is: N' + new_balance);
+      }
+
+      var bc = "rain";
+
+      if (bc !== "sun") {
+         //  alert('carry umbrella');
+      } else {
+         // alert('dont carry umbrella');
+      }
+
+      // Array Loop
+      var fruits = ["Apple", "Orange", "Mango", "PawPaw", "Water Melon"];
+
+      // iterates over array elements
+      for (var i = 0; i < fruits.length; i++) {
+         document.write(fruits[i] + "<br>"); //  Print array element
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+      var x;
+      for (x = 1; x <= 50; x++) {
+         document.write(x + "<br>");
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+      var z = 1;
+      while (z <= 5) {
+         document.write(z + "<br>");
+         z++;
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+
+      var z = 1;
+      while (z >= -50) {
+         document.write(z + "<br>");
+         z--;
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+
+      var i = 1;
+      do {
+         document.write("<p>The number is " + i + "</p>");
+         i++;
+      }
+      while (i <= 5);
+
+      
+class Car {
+  constructor(name) {
+    this.brand = name;
+  }
+
+  present() {
+    return 'I have a ' + this.brand;
+  }
+}
+
+class Model extends Car {
+  constructor(name, mod) {
+    super(name);
+    this.model = mod;
+  }  
+  show() {
+    return this.present() + ', it is a ' + this.model
+  }
+}
+
+const mycar = new Model("Ford", "Mustang");
+document.write(mycar.show());
+
+
+</script>
+
+
+     
+
+
+   </script>
+</body>
+
+</html>

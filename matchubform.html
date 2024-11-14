@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up and Login</title>
+<style> 
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* .header-panel {
+  background-color: #4f46e5;
+  color: black;
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+} */
+
+.form-panel {
+  padding: 30px;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="button"] {
+  background-color: #db4437;
+  margin-top: 10px;
+}
+
+a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 15px;
+  text-align: center;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px;
+    box-shadow: none;
+  }
+
+  .header-panel {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .form-panel {
+    padding: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: red;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex:1;
+    border-bottom: 1px solid #ddd;
+  }
+  .divider:not(:empty)::before {
+    margin-right: 0.5em;
+  }
+  .divider:not(:empty)::after {
+    margin-left: 0.5em;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+
+
+</style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sign Up Page -->
+  <div class="container" id="signup-page">
+   
+    <div class="form-panel">
+      <h2>Create Account</h2>
+      <form>
+        <label>First Name</label>
+        <input type="text" placeholder="Enter your first name" required>
+        
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter your last name" required>
+        
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+        
+        <label>Password</label>
+        <input type="password" placeholder="Create password" required>
+        
+        <label>
+          <input type="checkbox"> I agree with the Privacy Policy
+        </label>
+        
+        <button type="submit">Create Account</button>
+        <div class="divider" style="text-align: center;">or</div>
+        <button type="button" onclick="togglePage()">Sign up with Google</button>
+        
+        <p>Already have an account? <a href="#" onclick="togglePage()">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Page -->
+  <div class="container" id="login-page" style="display: none;">
+    
+    <div class="form-panel">
+      <h2>Login</h2>
+      <form>
+        <label>Email address</label>
+        <input type="email" placeholder="Enter email address" required>
+        
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+        
+        <label>
+          <input type="checkbox"> Keep me logged in
+        </label>
+        
+        <button type="submit">Log In</button>
+        
+        <p><a href="#">Forgot password?</a></p>
+        
+        <p>Don't have an account? <a href="#" onclick="togglePage()">Create account</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function togglePage() {
+      const signupPage = document.getElementById('signup-page');
+      const loginPage = document.getElementById('login-page');
+      signupPage.style.display = signupPage.style.display === 'none' ? 'flex' : 'none';
+      loginPage.style.display = loginPage.style.display === 'none' ? 'flex' : 'none';
+    }
+  </script>
+
+</body>
+</html>

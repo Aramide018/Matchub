@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap PAGE</title>
+    <!--Tab Image Icon-->
+    <link rel="icon" href="images/">
+
+    <!-- jQuery -->
+    <script src='jquery-3.1.1.min.js' type='text/javascript'></script>
+    <script src='jquery-ui.min.js' type='text/javascript'></script>
+    <link href='jquery-ui.min.css' rel='stylesheet' type='text/css'>
+
+    <!--Bootstrap-->
+    <script src="popper.min.js"></script>
+    <link href='font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap1.min.css">
+    <script src="bootstrap.min.js"></script>
+
+    <style>
+        .dropdown-item:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success ">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggler" data-target="collapse" data-toggle="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <!--Nav bar to the left-->
+                    <a href="#" class="nav-item nav-link text-dark">Home</a>
+                    <a href="#" class="nav-item nav-link text-dark">Profile</a>
+
+
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Cars</a>
+                        <div class="dropdown-menu bg-danger">
+                            <a href="toyota.html" class="dropdown-item">Toyota Camry</a>
+                            <a href="#" class="dropdown-item">Benz G-wagon</a>
+                            <a href="#" class="dropdown-item">Tesla</a>
+                            <a href="#" class="dropdown-item">Honda Pilot</a>
+                        </div>
+                    </div>
+
+
+                    <a href="#" class="nav-item nav-link text-dark">Reports</a>
+                </div>
+
+
+
+                <div class="navbar-nav ml-auto">
+                    <!--Nav bar to the right-->
+                    <a href="#" class="nav-item nav-link text-dark">Login</a>
+                </div>
+                <a href="#" class="navbar-brand float-right"><img src="img/Penguins.jpg"
+                        style="width: 40px; height:30px;"></a>
+            </div>
+        </div>
+    </nav>
+
+    <br class="pt-5">
+    <button class="btn btn-success ml-5">
+        Notification <span class="badge badge-dark text-success">5</span>
+    </button>
+</body>
+
+</html>
